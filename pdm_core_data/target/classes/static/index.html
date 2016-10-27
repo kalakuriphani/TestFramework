@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- CSS (load bootstrap) -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+	  <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
+	
+
+
+    <style>
+        .navbar { border-radius:0; }
+    </style>
+    <link rel="stylesheet" href="vendors/css/menustyle.css">
+    <!-- JS (load angular, ui-router, and our custom js file) -->
+  <script src="vendors/angularjs/angular.min.js"></script>
+   <script src="vendors/angularjs/angular-route.min.js"></script>
+<script src="vendors/angularjs/angular-resource.min.js"></script>
+<script src="vendors/angularjs/angular-cookies.js"></script>
+<script src="vendors/angularjs/angular-ui-router.js"></script>
+
+<script src="vendors/js/plugins/smart-table.min.js"></script>
+
+<!--  Application Dependencies -->
+    <script src="app.js"></script>
+    <script src="pdm/product/controllers/product.controller.js"></script>
+   <script src="\pdm\productviews\controllers\productview.controller.js"></script>
+   
+   
+   
+    <script src="pdm/services/product.service.js"></script>
+   	<script src="pdm/services/productview.service.js"></script>
+   
+    <!--  End Application dependencies -->
+
+<body ng-app="pdmApp">
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="#">Product Data Management</a>
+    </div>
+<nav id="primary_nav_wrap">
+<ul>
+  <li class="current-menu-item"><a href="#">Home</a></li>
+  <li><a class="current-menu-item" ui-sref="products">Product</a>
+    <ul>
+      <li><a ui-sref="createProduct({id:1})">Create Product</a></li>
+      <li><a ui-sref="viewProduct">Search Products</a></li>
+     <!--  <li><a ui-sref="viewProduct">Search Products</a></li> -->
+</ul>
+    </li>
+    </ul>
+    
+</nav>
+    </nav>
+    
+     
+<!-- MAIN CONTENT -->
+<!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+<div class="container">
+    <div ui-view></div>
+</div>
+
+
+
+</body>
+    </head>
+</html>
+   
+    
+    
+</html>

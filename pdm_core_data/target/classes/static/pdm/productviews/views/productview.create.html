@@ -1,0 +1,26 @@
+<h1> Create ProductView</h1>
+<form id="defaultForm" method="post" class="form-horizontal" ng-submit="vm.create()" name="myForm">
+<div class="form-group" ng-repeat="attribute in vAttributes">
+					</br>
+                     <div class="col-md-3 col-md-offset-1">
+                        <label class="control-label"> {{attribute.label}}: </label>
+                        </div>
+                        <div  ng-if ="'Text' === attribute.type">
+                      	  <div class="col-md-6 col-xs-12" >
+                            <input type="text"  id="Autocomplete" class="form-control" name="attribute.value" ng-model="attribute.value"  style="border:1px solid black;" {{attribute.validation}} value=""  />
+                       	 </div>
+                        </div>
+                          <div  ng-if ="'Radio' === attribute.type">
+                 
+                      	  <div class="col-md-6 col-xs-12" >
+                            <input type="radio"  id="Autocomplete" class="form-control" name="attribute.value" ng-model="attribute.value"  style="border:1px solid black;" {{attribute.validation}} value=""  />
+                       	 </div>
+                        </div>
+                    </div>
+                    
+                    
+                <div style="margin:17px 370px;">
+            <button type="submit"  class="btn btn-primary btn btn-md"  style="width:100px;">Save</button>
+         
+        </div>
+</form>

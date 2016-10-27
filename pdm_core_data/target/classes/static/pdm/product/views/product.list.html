@@ -1,0 +1,26 @@
+<h1>List Products</h1>
+<table st-table="bookingsList" st-safe-src="bookings" class="table table-striped" id="searchObjResults">
+<thead>
+	<tr>
+		<th>Id</th>
+		<th>Name</th>
+		<th>Type</th>
+	</tr>
+	</thead>
+	<tbody>
+	 <tr ng-repeat="product in products | filter:search:strict"> 
+	 <!-- <td>{{product._links.self.href}}</td> -->
+	  <td>
+	 <button type="button" class="btn btn-default" ng-click="vm.view(product._links.self.href)"><span class="glyphicon glyphicon-search"></span></button>
+	  </td>
+	  <!-- 	<td class="action-checkbox">
+                    <input id="{{prdocut._links.self.href}}" type="checkbox" value="{{product._links.self.href}}" ng-checked="selection.indexOf(product._links.self.href) > -1" ng-click="toggleSelection(product._links.self.href)" />
+                    <label for="{{product._links.self.href}}" ></label>
+                </td> -->
+	  
+	  <td>{{product.name}}</td>
+	 <td>{{product.type}}</td>
+	 </tr>
+
+
+</table>
